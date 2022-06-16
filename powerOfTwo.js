@@ -15,11 +15,10 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
 */
 
 function isPowerOfTwo(n){
-    if (n === 0) {
+    if (n === 1)
+      return true;
+    if (n % 2 !== 0 || n === 0) {
       return false;
-      } else {
-        return parseInt(
-        (Math.ceil((Math.log(n) / Math.log(2))))) === 
-          parseInt((Math.floor(((Math.log(n) / Math.log(2))))));
-      }
+    }
+    return isPowerOfTwo(n / 2);
   }
