@@ -16,17 +16,15 @@ function generatePairs(m, n) {
     let b = m;
     let arr = [];
     
-    while (!arr.includes([n, n])) {
+    while (a !== n) {
       arr.push([a, b]);
       b++;
       if (b === n) {
-        arr.push([a, b])
+        arr.push([a, b]);
         a++;
         b = a;
       }
-      if (a === n && b === n) {
-        arr.push([a, b]);
-        return arr;
-      }
     }
+    arr.push([a, b]);
+    return arr;
   }
