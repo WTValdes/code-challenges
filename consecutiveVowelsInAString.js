@@ -24,7 +24,7 @@ function getTheVowels(word) {
       if (word[i] === vowels[tracker]) {
         counter++;
         tracker++;
-        if (tracker === 5) {
+        if (tracker === vowels.length) {
           tracker = 0;
         }
       }
