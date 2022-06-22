@@ -5,10 +5,10 @@ Note: you will always receive a valid array (string in COBOL) containing a rando
 */
 
 function isValidWalk(walk) {
-    let n = 0;
-    let s = 0;
-    let w = 0;
-    let e = 0;
-    walk.forEach(a => a === 'n' ? n++ : a === 's' ? s++ : a === 'w' ? w++ : a === 'e' ? e++ : 0);
-    return walk.length === 10 && [n, s, w, e].reduce((a, b) => a - b) === 0;
-  }
+  let n = 0;
+  let s = 0;
+  let w = 0;
+  let e = 0;
+  walk.forEach(a => a === 'n' ? n++ : a === 's' ? s++ : a === 'w' ? w++ : a === 'e' ? e++ : 0);
+  return walk.length === 10 && [n, s].reduce((a, b) => a - b) === 0 && [w, e].reduce((a, b) => a - b) === 0;
+}
