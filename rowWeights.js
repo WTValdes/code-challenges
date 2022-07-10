@@ -26,9 +26,9 @@ The first element 80 is the total weight of team 1, and the second element 0 is 
 */
 
 function rowWeights(array){
-    let evens = [0];
-    let odds = [0];
+    let evens = [];
+    let odds = [];
     array.forEach((a, i) => i % 2 === 0 ? evens.push(a) : odds.push(a))
-    return [evens.reduce((m, n) => m + n), odds.reduce((x, y) => x + y)];
+    return [evens.reduce((m, n) => m + n, 0), odds.reduce((x, y) => x + y, 0)];
   }
 
